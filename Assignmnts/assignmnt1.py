@@ -1,4 +1,7 @@
 #QUESTION 1
+from turtle import update
+
+
 s="Hello, World"
 print("the first character is:", s[0])
 print("the last character is:", s[-1])
@@ -58,7 +61,7 @@ print("sum of numerical tuple elements: ", sum(tup))
 
 #QUESTION 5
 #Packing a tuple
-a, b, c, d=(1, 2, 3)
+a, b, c, d=(1, 2, 3,4)
 
 #Unpacking a tuple
 a, b, c, d=(1, 2, 3, 4)
@@ -67,4 +70,60 @@ print(a)
 print(b)
 print(c)
 print(d)
-#hellloo
+
+#QUESTION 6
+student={"name": "ANU",
+       "age": 21,
+       "course": "BTECH",
+       "address": "AGRA"
+       }
+print("\nPrint all keys: ", student.keys())
+
+print("Print all values:", student.values())
+
+print("Print all items: ", student.items())
+
+print("update the Address: ") 
+student.update({"area_of_study": student.pop("course")}) 
+print(student)
+
+print("Add a new key called Branch: ")
+student["branch"]= "CSE"
+print(student)
+
+#QUESTION 7
+lst2 = [1, 2, 3, 4, [2, 5], 7]
+print("\naccess an element from a nested list: ", lst2[4][1])
+
+#Question 8
+print("\n")
+t= int(input("enter a number here: "))
+
+print("Add 10 using the += operator: ")
+t+=10
+print("updated value", t)
+
+#QUESTION 9
+print("\nTYPECASTING: ")
+num1= input("enter first number: ")
+print(type(num1))
+num2= input("enter second number: ")
+print(type(num2))
+nm1= int(num1) #Convert them to integers 
+nm2= int(num2)
+print(nm1*nm2) #multiply
+
+#QUESTION 10
+print("\n")
+print(student.get("name")) 
+print(student.keys()) 
+print(student.values()) 
+print(student.items())
+
+#QUESTION 11: Create a copy of a list using copy() and print both the original and copied lists.
+
+ts=[4, 13, 1989, 15, 22]
+tay= ts.copy()
+print("\n", ts) #prints original list
+print(tay) #prints copy of list
+
