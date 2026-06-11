@@ -96,7 +96,7 @@ lst2 = [1, 2, 3, 4, [2, 5], 7]
 print("\naccess an element from a nested list: ", lst2[4][1])
 
 #Question 8
-print("\n")
+print("\n") 
 t= int(input("enter a number here: "))
 
 print("Add 10 using the += operator: ")
