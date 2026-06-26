@@ -1,0 +1,28 @@
+#  Create a Pandas DataFrame using the dataset below:  Name Age Marks Amit 20 85 Neha 21 90 Rahul 19 78 Sneha 22 88  a) Tasks: ● Display first 2 rows  ● Display only Name and Marks columns  ● Add a new column named “Result”  ● Display students with marks greater than 80   b) Expected Concepts: ● pd.DataFrame()  ● head()  ● Column Selection  ● Conditional Filtering 
+import pandas as pd
+
+data = {
+    "Name": ["Amit", "Neha", "Rahul", "Sneha"],
+    "Age": [20, 21, 19, 22],
+    "Marks": [85, 90, 78, 88]
+}
+
+df = pd.DataFrame(data)
+
+# First 2 rows
+print("First 2 rows:")
+print(df.head(2))
+
+# Name and Marks columns
+print("\nName and Marks columns:")
+print(df[["Name", "Marks"]])
+
+# Add Result column
+df["Result"] = df["Marks"].apply(lambda x: "Pass" if x >= 80 else "Fail")
+
+print("\nDataFrame with Result column:")
+print(df)
+
+# Students with marks > 80
+print("\nStudents with marks greater than 80:")
+print(df[df["Marks"] > 80])

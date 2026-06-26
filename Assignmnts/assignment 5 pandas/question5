@@ -1,0 +1,29 @@
+# Dataset Link: Iris Dataset a) Tasks: ● Load CSV file using Pandas  ● Display dataset information  ● Find:  o Total rows and columns  o Average sepal length  o Different species names  ● Display summary statistics  b) Expected Concepts: ● pd.read_csv()  ● info()  ● describe()  ● unique()
+import pandas as pd
+
+# 1. Load CSV file using Pandas
+# (Make sure "Iris.csv" is in the same directory as your script)
+df = pd.read_csv("Iris.csv")
+
+# 2. Display dataset information
+print("--- Dataset Information ---")
+df.info()
+
+# 3. Find Total rows and columns
+rows, cols = df.shape
+print(f"\nTotal Rows: {rows}")
+print(f"Total Columns: {cols}")
+
+# 4. Find Average sepal length
+# Note: This assumes the column is named "SepalLengthCm" 
+# Adjust the string if your CSV header matches "sepal_length", etc.
+avg_sepal_length = df["SepalLengthCm"].mean()
+print(f"\nAverage Sepal Length: {avg_sepal_length:.2f} cm")
+
+# 5. Find Different species names
+print("\nDifferent Species Names:")
+print(df["Species"].unique())
+
+# 6. Display summary statistics
+print("\n--- Summary Statistics ---")
+print(df.describe())

@@ -1,0 +1,26 @@
+# Create a DataFrame using the dataset below: Name A B C D a) Tasks: Age 25 NaN 27 24 ● Identify missing values  Salary 30000 40000 NaN 35000 ● Fill missing Age with average age  ● Fill missing Salary with median salary  ● Display cleaned dataset  b) Expected Concepts: ● isnull()  ● fillna()  ● mean()  ● median() 
+import pandas as pd
+import numpy as np
+
+# Create DataFrame
+data = {
+    "Name": ["A", "B", "C", "D"],
+    "Age": [25, np.nan, 27, 24],
+    "Salary": [30000, 40000, np.nan, 35000]
+}
+
+df = pd.DataFrame(data)
+
+# Identify missing values
+print("Missing Values:")
+print(df.isnull())
+
+# Fill missing Age with mean
+df["Age"] = df["Age"].fillna(df["Age"].mean())
+
+# Fill missing Salary with median
+df["Salary"] = df["Salary"].fillna(df["Salary"].median())
+
+# Display cleaned dataset
+print("\nCleaned Dataset:")
+print(df)
